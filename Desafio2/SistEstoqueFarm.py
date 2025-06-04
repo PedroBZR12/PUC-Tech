@@ -138,7 +138,7 @@ while rodando:
             avisoCritico()  # Se o usuário quer checar se algum medicamento está em estado crítico ou não esyá mais no estoque
             
         elif opcao == 0:    # Se o usuário escolheu sair do programa.
-            print("Encerrando o sistema...")
+            print("Encerrando o sistema.")
             rodando = False
             
         else:   # Se o usuário digitou uma opção inválida.
