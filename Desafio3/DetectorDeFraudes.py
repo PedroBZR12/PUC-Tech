@@ -86,6 +86,11 @@ print("="*50)
 # Formato: [[TN, FP], [FN, TP]]
 tn, fp, fn, tp = cm.ravel()
 
+print(f"\nInterpretação da Matriz de Confusão:")
+print(f"• Verdadeiros Negativos (TN): {tn:,} - Transações legítimas identificadas corretamente")
+print(f"• Falsos Positivos (FP): {fp:,} - Transações legítimas classificadas como fraude")
+print(f"• Falsos Negativos (FN): {fn:,} - Fraudes que passaram despercebidas")
+print(f"• Verdadeiros Positivos (TP): {tp:,} - Fraudes detectadas corretamente")
 
 # Calculando métricas adicionais para interpretação
 precision = tp / (tp + fp) if (tp + fp) > 0 else 0    # Das previstas como fraude, quantas eram realmente
@@ -97,12 +102,6 @@ print(f"• Precisão: {precision:.4f} ({precision*100:.2f}%) - Das predições 
 print(f"• Recall: {recall:.4f} ({recall*100:.2f}%) - Das fraudes reais, quantas foram detectadas")
 print(f"• Especificidade: {specificity:.4f} ({specificity*100:.2f}%) - Das transações legítimas, quantas foram identificadas")
 
-print(f"\nInterpretações Práticas:")
-print("• Dataset desbalanceado: apenas 3% são fraudes (cenário realista)")
-print("• F1-Score é mais importante que acurácia para dados desbalanceados")
-print("• class_weight='balanced' foi usado para lidar com o desbalanceamento")
-print("• Falsos Positivos = Clientes legítimos bloqueados desnecessariamente")
-print("• Falsos Negativos = Fraudes não detectadas = Perdas financeiras diretas")
 
 # Avaliação final do desempenho
 if f1 > 0.7:
